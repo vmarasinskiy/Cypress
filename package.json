@@ -10,8 +10,5 @@
     "vmarasinskiy"
   ],
   "author": "vmarasinskiy",
-  "license": "ISC",
-  "dependencies": {
-    "cypress": "^13.6.0"
-  }
+  "license": "ISC"
 }
