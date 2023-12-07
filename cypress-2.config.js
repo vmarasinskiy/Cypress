@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: "2ct4x2",
+  projectId: "khktqq"
   e2e: {
     baseUrl: 'https://sqlverifier-staging-08050d656f7a.herokuapp.com',
     setupNodeEvents(on, config) {
