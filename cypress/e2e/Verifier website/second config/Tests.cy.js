@@ -1,11 +1,11 @@
 describe("Verifier Website - Тест загрузки страницы", () => {
   it("Открыта страница сайта sqlverifier-live", () => {
-    cy.visit("/"); // Замените 'https://www.example.com' на ваш URL
+    cy.visit("/");
   });
 
   // Добавление теста для авторизации с заданными данными
   it("Авторизован под зарегистрированным пользователем", () => {
-    const login = "student";
+    const login = "user-v";
     const password = "123456!";
 
     // Зайти на страницу
@@ -29,7 +29,7 @@ describe("Verifier Website - Тест загрузки страницы", () => 
   });
 
   it("Test", () => {
-    const login = "student";
+    const login = "user-v";
     const password = "123456!";
 
     // Зайти на страницу

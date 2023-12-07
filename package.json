@@ -6,6 +6,7 @@
   "scripts": {
     "cy:open": "npx cypress open",
     "cy:run": "npx cypress run",
+    "cy:run:second": "npm run cy:run --config-file cypress-2.config.js",
     "cy:dashboard": "cypress run — record — key 99ae4f11-e06d-4ec3-a287-ad1597444653"
   },
   "keywords": [
@@ -14,6 +15,6 @@
   "author": "vmarasinskiy",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.6.0"
+    "cypress": "^13.6.1"
   }
 }
