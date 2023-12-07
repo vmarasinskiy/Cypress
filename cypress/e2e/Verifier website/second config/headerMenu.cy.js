@@ -1,5 +1,6 @@
 describe("Verifier Website - Тест загрузки страницы", () => {
   it("Открыта страница сайта sqlverifier-live", () => {
+    Cypress.config("baseUrl", "https://sqlverifier-staging-08050d656f7a.herokuapp.com");
     cy.visit('/');
   });
 
