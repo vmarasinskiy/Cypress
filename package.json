@@ -10,7 +10,7 @@
     "cy:dashboard": "cypress run — record — key 99ae4f11-e06d-4ec3-a287-ad1597444653",
     "test-chrome": "npm run cy:run --spec test-chrome.cy.js",
     "test-electron": "npm run cy:run --spec test-electron.cy.js",
-    "run-test": "npm run cy:run --spec run-tests.cy.js"
+    "run-test": "npm run cy:run --spec run-tests.cy.js — record — key 99ae4f11-e06d-4ec3-a287-ad1597444653"
   },
   "keywords": [
     "vmarasinskiy"
