@@ -8,10 +8,10 @@
     "cy:run": "npx cypress run",
     "cy:run:second": "npm run cy:run --config-file cypress-2.config.js",
     "cy:dashboard": "cypress run -- record -- key 99ae4f11-e06d-4ec3-a287-ad1597444653",
-    "test-chrome": "npm run cy:run --spec test-chrome.cy.js",
-    "test-electron": "npm run cy:run --spec test-electron.cy.js",
-    "run-test": "npm run cy:run --spec run-tests.cy.js",
-    "cy:third_dashboard": "cypress run --record --key 3cbaf026-8c15-4a6c-9172-fe451adf026c"
+    "cy:run:chrome": "npx cypress run --spec 'cypress/e2e/test-chrome.cy.js' --browser chrome",
+    "cy:run:electron": "npx cypress run --spec 'cypress/e2e/test-electron.cy.js' --browser electron",
+    "run:test": "npx cypress run --spec 'cypress/e2e/test-chrome.cy.js' --browser chrome && npx cypress run --spec 'cypress/e2e/test-electron.cy.js' --browser electron",
+    "run:test:dashboard": "npx cypress run --spec 'cypress/e2e/test-chrome.cy.js' --browser chrome && npx cypress run --spec 'cypress/e2e/test-electron.cy.js' --browser electron -- record -- key 99ae4f11-e06d-4ec3-a287-ad1597444653"
     },
   "keywords": [
     "vmarasinskiy"
