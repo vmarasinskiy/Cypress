@@ -11,7 +11,7 @@
     "test-chrome": "npm run cy:run --spec test-chrome.cy.js",
     "test-electron": "npm run cy:run --spec test-electron.cy.js",
     "run-test": "npm run cy:run --spec run-tests.cy.js",
-    "cy:dashboard": "cypress run --record --key 3cbaf026-8c15-4a6c-9172-fe451adf026c"
+    "cy:third_dashboard": "cypress run --record --key 3cbaf026-8c15-4a6c-9172-fe451adf026c"
     },
   "keywords": [
     "vmarasinskiy"
