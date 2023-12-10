@@ -1,10 +1,12 @@
 describe("Verifier Website - Тест загрузки страницы", () => {
-  it("Открыта страница сайта sqlverifier-live", () => {
+  beforeEach(() => {
     Cypress.config("baseUrl", "https://sqlverifier-staging-08050d656f7a.herokuapp.com");
-    cy.visit('/');
   });
 
-  // Добавление теста для авторизации с заданными данными
+  it("Открыта страница сайта sqlverifier-live", () => {
+    cy.visit("/");
+  });
+
   it("Авторизован под зарегистрированным пользователем", () => {
     const login = 'user-v';
     const password = '123456!';
@@ -12,18 +14,8 @@ describe("Verifier Website - Тест загрузки страницы", () => 
     // Зайти на страницу
     cy.visit('/');
 
-    // Нажать на кнопку Account
-    cy.get('#account-menu').click();
-
-    // Нажать на кнопку Sign In
-    cy.get('#login-item').click();
-
-    // Ввод логина и пароля
-    cy.get('input[name="username"]').type(login);
-    cy.get('input[name="password"]').type(password);
-
-    // Клик по кнопке "Войти"
-    cy.get('button[type="submit"]').click();
+    // Вызвать кастомную команду для авторизации
+    cy.login(login, password);
 
     // Проверка успешной авторизации
     cy.url().should('include', '?page=1&sort=id,asc');
