@@ -1,116 +1,76 @@
 describe("Verifier Website - Тест загрузки страницы", () => {
-  it("Открыта страница сайта sqlverifier-live", () => {
-    Cypress.config("baseUrl", "https://sqlverifier-staging-08050d656f7a.herokuapp.com");
-    cy.visit("/");
-  });
+  before(() => {
+    cy.visit('/');
 
-  // Добавление теста для авторизации с заданными данными
-  it("Авторизован под зарегистрированным пользователем", () => {
-    const login = "user-v";
+    // Авторизация
+    const login = "student";
     const password = "123456!";
 
-    // Зайти на страницу
-    cy.visit("/");
-
-    // Нажать на кнопку Account
     cy.get("#account-menu").click();
-
-    // Нажать на кнопку Sign In
     cy.get("#login-item").click();
-
-    // Ввод логина и пароля
     cy.get('input[name="username"]').type(login);
     cy.get('input[name="password"]').type(password);
-
-    // Клик по кнопке "Войти"
-    cy.get('button[type="submit"]').click();
-
-    // Проверка успешной авторизации
+    cy.get('form').submit();
     cy.url().should("include", "?page=1&sort=id,asc");
+  });
+
+  it("Открыта страница сайта sqlverifier-live", () => {
+    // Нет необходимости повторно посещать страницу и авторизовываться здесь
+    // Так как это уже было сделано в before хуке
   });
 
   it("Test", () => {
-    const login = "user-v";
-    const password = "123456!";
-
-    // Зайти на страницу
-    cy.visit("/");
-
-    // Нажать на кнопку Account
-    cy.get("#account-menu").click();
-
-    // Нажать на кнопку Sign In
-    cy.get("#login-item").click();
-
-    // Ввод логина и пароля
-    cy.get('input[name="username"]').type(login);
-    cy.get('input[name="password"]').type(password);
-
-    // Клик по кнопке "Войти"
-    cy.get('button[type="submit"]').click();
-
-    // Проверка успешной авторизации
-    cy.url().should("include", "?page=1&sort=id,asc");
-
-    // 1_Нажать на кнопку Home
+    // 1. Нажать на кнопку Home
     cy.get("#header-tabs").click();
     cy.get("#header-tabs").should("be.visible");
     cy.url().should("include", "/?page=1&sort=id,asc");
 
-    // 2_Нажать на кнопку Task в меню Entities
+    // 2. Нажать на кнопку Task в меню Entities
     cy.get("#entity-menu").click();
     cy.get("#entity-menu > div > a:nth-child(1)").click();
     cy.url().should("include", "/task?page=1&sort=id,asc");
 
-    // 3_Нажать на кнопку User Task в меню Entities
+    // 3. Нажать на кнопку User Task в меню Entities
     cy.get("#entity-menu").click();
     cy.get("#entity-menu > div > a:nth-child(2)").click();
     cy.url().should("include", "/user-task");
 
-    // 4_Нажать на кнопку API в меню SWAGGER
+    // 4. Нажать на кнопку API в меню SWAGGER
     cy.get("#docs-menu").click();
     cy.get("#docs-menu > div > a").click();
     cy.url().should("include", "docs/docs");
 
-    // 5_Нажать на кнопку English в меню English
+    // 5. Нажать на кнопку English в меню English
     cy.get("#header-tabs > li:nth-child(4) > a").click();
-    cy.get(
-      "#header-tabs > li.dropdown.show.nav-item > div > button:nth-child(1)"
-    ).click();
+    cy.get("#header-tabs > li.dropdown.show.nav-item > div > button:nth-child(1)").click();
     cy.url().should("include", "docs/docs");
 
-    // 6_Нажать на кнопку Français в меню English
+    // 6. Нажать на кнопку Français в меню English
     cy.get("#header-tabs > li:nth-child(4) > a").click();
-    cy.get(
-      "#header-tabs > li.dropdown.show.nav-item > div > button:nth-child(2)"
-    ).click();
+    cy.get("#header-tabs > li.dropdown.show.nav-item > div > button:nth-child(2)").click();
     cy.url().should("include", "docs/docs");
 
-    // 7_Нажать на кнопку Русский в меню English
+    // 7. Нажать на кнопку Русский в меню English
     cy.get("#header-tabs > li:nth-child(4) > a").click();
-    cy.get(
-      "#header-tabs > li.dropdown.show.nav-item > div > button:nth-child(3)"
-    ).click();
+    cy.get("#header-tabs > li.dropdown.show.nav-item > div > button:nth-child(3)").click();
     cy.url().should("include", "docs/docs");
 
-    // 8_Нажать на кнопку Українська в меню English
+    // 8. Нажать на кнопку Українська в меню English
     cy.get("#header-tabs > li:nth-child(4) > a").click();
-    cy.get(
-      "#header-tabs > li.dropdown.show.nav-item > div > button:nth-child(4)"
-    ).click();
+    cy.get("#header-tabs > li.dropdown.show.nav-item > div > button:nth-child(4)").click();
     cy.url().should("include", "docs/docs");
 
-    // 9_Нажать на кнопку Настройки в меню Профиль
+    // 9. Нажать на кнопку Настройки в меню Профиль
     cy.get("#account-menu").click();
     cy.get("#account-menu > div > a:nth-child(1)").click();
     cy.url().should("include", "/account/settings");
 
-    // 10_Нажать на кнопку Пароль в меню Профиль
+    // 10. Нажать на кнопку Пароль в меню Профиль
     cy.get("#account-menu").click();
     cy.get("#account-menu > div > a.dropdown-item.active > svg").click();
     cy.url().should("include", "/account/settings");
 
-    // 11_Нажать на кнопку Пароль в меню Профиль
+    // 11. Нажать на кнопку Пароль в меню Профиль
     cy.get("#account-menu").click();
     cy.get("#account-menu > div > a:nth-child(3) > svg").click();
     cy.url().should("include", "/logout");
