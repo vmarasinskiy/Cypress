@@ -1,0 +1,6 @@
+{
+    "loginField":"#username",
+    "passwordField":"#password",
+    "buttonField":"#login-page > div > form > div.modal-footer > button.btn.btn-primary",
+    "signButton": "#account-menu > div > a:nth-child(3)"
+}
