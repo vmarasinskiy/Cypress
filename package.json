@@ -12,7 +12,7 @@
     "cy:run:electron": "npx cypress run --spec 'cypress/e2e/test-electron.cy.js' --browser electron",
     "run:test": "npx cypress run --spec 'cypress/e2e/test-chrome.cy.js' --browser chrome && npx cypress run --spec 'cypress/e2e/test-electron.cy.js' --browser electron",
     "run:test:dashboard": "npx cypress run --record --key 99ae4f11-e06d-4ec3-a287-ad1597444653 --spec 'cypress/e2e/test-chrome.cy.js' --browser chrome && npx cypress run --record --key 99ae4f11-e06d-4ec3-a287-ad1597444653 --spec 'cypress/e2e/test-electron.cy.js' --browser electron"
-    },
+  },
   "keywords": [
     "vmarasinskiy"
   ],

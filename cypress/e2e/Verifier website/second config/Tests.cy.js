@@ -3,7 +3,7 @@ describe("Verifier Website - Тест загрузки страницы", () => 
     cy.visit('/');
 
     // Авторизация
-    const login = "student";
+    const login = "user-v";
     const password = "123456!";
 
     cy.get("#account-menu").click();
@@ -14,16 +14,11 @@ describe("Verifier Website - Тест загрузки страницы", () => 
     cy.url().should("include", "?page=1&sort=id,asc");
   });
 
-  it("Открыта страница сайта sqlverifier-live", () => {
-    // Нет необходимости повторно посещать страницу и авторизовываться здесь
-    // Так как это уже было сделано в before хуке
-  });
-
   it("Test", () => {
     // 1. Нажать на кнопку Home
-    cy.get("#header-tabs").click();
-    cy.get("#header-tabs").should("be.visible");
-    cy.url().should("include", "/?page=1&sort=id,asc");
+    cy.get("#header-tabs > li:nth-child(1) > a").click();
+    cy.get("#header-tabs > li:nth-child(1) > a").should("be.visible");
+    cy.url().should("include", "/");
 
     // 2. Нажать на кнопку Task в меню Entities
     cy.get("#entity-menu").click();
