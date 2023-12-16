@@ -12,7 +12,7 @@ describe("Verifier Website - Тест загрузки страницы", () => 
     // Нажать на кнопку Account
     cy.get("#account-menu").click();
 
-    // Нажать на кнопку Account
+    // Нажать на кнопку Registr
     cy.get('[data-cy="register"] > span').click();
 
     // Форма регистрации открыта
@@ -40,6 +40,3 @@ describe("Verifier Website - Тест загрузки страницы", () => 
       });
    });
 });
-
-
-

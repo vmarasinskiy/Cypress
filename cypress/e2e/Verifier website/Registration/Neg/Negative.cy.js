@@ -1,5 +1,6 @@
 const n_userNames = require("../../../../fixtures/negative.json");
 const n_email = require("../../../../fixtures/negative_email.json");
+const n_password = require("../../../../fixtures/negative_password.json")
 
 describe("Verifier Website - Тест загрузки страницы", () => {
   beforeEach(() => {
@@ -25,15 +26,18 @@ describe("Verifier Website - Тест загрузки страницы", () => 
     
       n_userNames.forEach((item) => {
         cy.get('#username').clear().type(item).should('not.include.text', 'Your username is invalid.');
-        cy.get('#email').clear().type(item).should('not.include.text', 'Your email is invalid.')
       });
-
-
+          //Email
+      n_email.forEach((item) => {
+        cy.get('#email').clear().type(item).should('not.include.text', 'Your email is invalid.');
+      });
+      //firstPassword
+      n_password.forEach((item) => {
+      cy.get("#firstPassword").clear().type(item).should('not.include.text', 'Your password cannot be longer than 50 characters.');
+      });
+       //secondPassword
+       n_password.forEach((item) => {
+        cy.get("#secondPassword").clear().type(item).should('not.include.text', 'Your confirmation password cannot be longer than 50 characters.');
+      });
    });
 });
-
-//cy.get("#username").then((UserNameField) => {
-//cy.get("#username").clear().type(item).should('have.attr', 'aria-invalid', 'false');
-
-
-
