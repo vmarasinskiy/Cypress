@@ -1,13 +1,17 @@
+// Импортировать фикстуру в начале файла
+const loginPageElements = require("../../fixtures/login/loginPageSelectors.json");
+
 export class LoginPage {
+
+    // Использование селекторов из фикстуры
     elements = {
-        loginField: () => cy.get('#username'),
-        passwordField: () => cy.get('#password'),
-        buttonField: () => cy.get('#login-page > div > form > div.modal-footer > button.btn.btn-primary'),
+        loginField: () => cy.get(loginPageElements.loginField),
+        passwordField: () => cy.get(loginPageElements.passwordField),
+        buttonField: () => cy.get(loginPageElements.buttonField),
     };
 
-    login (login, password) {
-        this.elements.loginField().type(login);
-        this.elements.passwordField().type(password);
-        this.elements.buttonField().click();
+    // Использование кастомной команды для логина
+    login(login, password) {
+        cy.login(login, password);
     }
 }
