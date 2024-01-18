@@ -1,12 +1,14 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  projectId: "nydtap",
+  viewportWidth: 1920,
+  viewportHeight: 1080,
+
+  projectId: "2ct4x2",
   e2e: {
-    baseUrl: 'https://sqlverifier-staging-08050d656f7a.herokuapp.com',
-    watchForFileChanges: false,
+    baseUrl: 'https://sqlverifier-live-6e21ca0ed768.herokuapp.com',
     setupNodeEvents(on, config) {
-          // implement node event listeners here
-    },
-  },
+      // implement node event listeners here
+    }
+  }
 });

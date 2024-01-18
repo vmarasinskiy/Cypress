@@ -8,10 +8,12 @@
     "cy:run": "npx cypress run",
     "cy:run:second": "npm run cy:run --config-file cypress-2.config.js",
     "cy:dashboard": "cypress run -- record -- key 99ae4f11-e06d-4ec3-a287-ad1597444653",
-    "cy:run:chrome": "npx cypress run --spec 'cypress/e2e/test-chrome.cy.js' --browser chrome",
-    "cy:run:electron": "npx cypress run --spec 'cypress/e2e/test-electron.cy.js' --browser electron",
+    "cy:run:chrome": "npx cypress run --spec 'cypress/e2e/Chrome/test-chrome.cy.js' --browser chrome --record --key 7ee9c75c-6bec-4221-8ed6-c8dfb2679006 --config-file cypress.config.js",
+    "cy:run:electron": "npx cypress run --spec 'cypress/e2e/Electron/test-electron.cy.js' --browser electron --record --key 7ee9c75c-6bec-4221-8ed6-c8dfb2679006",
     "run:test": "npx cypress run --spec 'cypress/e2e/test-chrome.cy.js' --browser chrome && npx cypress run --spec 'cypress/e2e/test-electron.cy.js' --browser electron",
-    "run:test:dashboard": "npx cypress run --record --key 99ae4f11-e06d-4ec3-a287-ad1597444653 --spec 'cypress/e2e/test-chrome.cy.js' --browser chrome && npx cypress run --record --key 99ae4f11-e06d-4ec3-a287-ad1597444653 --spec 'cypress/e2e/test-electron.cy.js' --browser electron"
+    "run:test:dashboard": "npx cypress run --record --key 7ee9c75c-6bec-4221-8ed6-c8dfb2679006 --spec 'cypress/e2e/Chrome/test-chrome.cy.js' --browser chrome && npx cypress run --record --key 7ee9c75c-6bec-4221-8ed6-c8dfb2679006 --spec 'cypress/e2e/Electron/test-electron.cy.js' --browser electron",
+    "cy:nokey:parallel": "npm run cy:run:chrome -- --browser chrome & npm run cy:run:electron -- --browser electron",
+    "cy:parallel": "npm run cy:run:chrome -- --browser chrome --group chrome --ci-build-id 3 --parallel & npm run cy:run:electron -- --browser electron --group electron --ci-build-id 3 --parallel"
   },
   "keywords": [
     "vmarasinskiy"
