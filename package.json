@@ -13,7 +13,7 @@
     "run:test": "npx cypress run --spec 'cypress/e2e/test-chrome.cy.js' --browser chrome && npx cypress run --spec 'cypress/e2e/test-electron.cy.js' --browser electron",
     "run:test:dashboard": "npx cypress run --record --key 7ee9c75c-6bec-4221-8ed6-c8dfb2679006 --spec 'cypress/e2e/Chrome/test-chrome.cy.js' --browser chrome && npx cypress run --record --key 7ee9c75c-6bec-4221-8ed6-c8dfb2679006 --spec 'cypress/e2e/Electron/test-electron.cy.js' --browser electron",
     "cy:nokey:parallel": "npm run cy:run:chrome -- --browser chrome & npm run cy:run:electron -- --browser electron",
-    "cy:parallel": "npm run cy:run:chrome -- --browser chrome --group chrome --ci-build-id 3 --parallel & npm run cy:run:electron -- --browser electron --group electron --ci-build-id 3 --parallel"
+    "cy:parallel": "npm run cy:run:chrome -- --browser chrome --group chrome --parallel & npm run cy:run:electron -- --browser electron --group electron --parallel"
   },
   "keywords": [
     "vmarasinskiy"
