@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="9.609" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2024-02-02T12:00:01" tests="0" file="cypress\e2e\Verifier website\Registration\Pos\PositiveTest.cy.js" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Verifier Website - Тест загрузки страницы" timestamp="2024-02-02T12:00:01" tests="1" time="9.602" failures="0">
+    <testcase name="Verifier Website - Тест загрузки страницы Открыта форма регистрации" time="9.548" classname="Открыта форма регистрации">
+    </testcase>
+  </testsuite>
+</testsuites>

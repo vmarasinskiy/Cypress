@@ -46,3 +46,5 @@ jspm_packages
 # Microbundle cache
 .rpt2_cache/
 .rbx_debug_output_directory/
+
+key.js
